@@ -16,9 +16,10 @@ brew install --cask waves
 brew upgrade --cask waves
 ```
 
-A copy installed through this tap knows it is Homebrew-managed: the in-app
-updater still tells you when a new version is out, but points you at the
-command above instead of installing over the Homebrew copy. Third-party
+A copy installed through this tap knows it is Homebrew-managed: when a new
+version is out, the in-app Update & restart button runs the command above
+for you (same one click as any other install) instead of downloading over
+the Homebrew copy, so Homebrew's own records stay correct. Third-party
 updater tools that track Homebrew or GitHub releases work as usual.
 
 ## Note on Gatekeeper
