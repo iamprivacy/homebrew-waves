@@ -1,9 +1,9 @@
 cask "waves" do
   arch arm: "apple-silicon", intel: "intel"
 
-  version "0.1.12"
-  sha256 arm:   "ff1e732b072b1ff380b24abacc3b3e2fb40c0a61d00f25995b64fd16369e0e53",
-         intel: "10965d0244bd512962cb424eb90809b8f0e33b030bf3c189210e035fcf3eed5c"
+  version "0.1.13"
+  sha256 arm:   "afc6c2cbfd410eab10d439aa4c7bcd183e933660be416e329d09809ebe3f446a",
+         intel: "dbd8355e3040f1e6a8a5e390774a9796a5b938b54159fcf0ade3d0e58e5421d1"
 
   url "https://github.com/iamprivacy/Waves/releases/download/v#{version}/waves_macos-#{arch}.zip"
   name "Waves"
