@@ -10,6 +10,10 @@ cask "waves" do
   desc "Native desktop app for downloading music from your own TIDAL account"
   homepage "https://github.com/iamprivacy/Waves"
 
+  # The bundled Qt runs on macOS 12 Monterey and newer; refuse cleanly below
+  # that instead of installing an app that cannot launch.
+  depends_on macos: ">= :monterey"
+
   app "waves.app"
 
   postflight do
