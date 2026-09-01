@@ -11,15 +11,15 @@ cask "waves" do
   # openers at this exact two-space indent and the "arm:   " / "intel: "
   # spacing, its seds are anchored to them.
   on_sequoia :or_newer do
-    sha256 arm:   "fdc2ec2b9ca03a02d63507c10c198cdf67165e07b0e2a7578284d1cd101ca056",
-           intel: "5ba0fde39ffd46189072dee07fdc018663fb20847d529611e25939daa002839e"
+    sha256 arm:   "7f67b448e85b8404d72fef98aba1b61b05fd68d1a02f96bc0062f8710393455f",
+           intel: "49d0e4475de748c3e9ca3d65096396870f52ecbfb9ac4e3b775fbe2232dbfb36"
 
     url "https://github.com/iamprivacy/Waves/releases/download/v#{version}/waves_macos-#{arch}.zip"
   end
   on_sonoma :or_older do
     # Placeholder until the first dual release publishes the legacy assets.
-    sha256 arm:   "c078e72a77361b6b6698bae656770019756b448357ed04174322f05f36da3e08",
-           intel: "13c44b4e72d3cbdb800535e85a4d5dfcf81a55df77278af3e32645e786b6c63c"
+    sha256 arm:   "a04061ca0b812549eef6186af81435898de58022091f063f47a2a72baf026aa3",
+           intel: "27c6873d25279c314d82a4759915325f4002d31b39795ddedf7bb53ca5dc23fa"
 
     url "https://github.com/iamprivacy/Waves/releases/download/v#{version}/waves_macos-#{arch}_legacy.zip"
   end
