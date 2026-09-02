@@ -30,7 +30,7 @@ cask "waves" do
 
   # The legacy bundle runs on macOS 12 Monterey and newer; refuse cleanly
   # below that instead of installing an app that cannot launch.
-  depends_on macos: ">= :monterey"
+  depends_on macos: :monterey
 
   app "waves.app"
 
