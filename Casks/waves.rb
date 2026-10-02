@@ -1,7 +1,7 @@
 cask "waves" do
   arch arm: "apple-silicon", intel: "intel"
 
-  version "0.1.32"
+  version "0.1.33"
 
   # Two macOS flavors from v0.1.16 on (issue #14: the bundled Qt's newer
   # releases require macOS 15): machines on Sequoia and newer get the regular
@@ -11,15 +11,15 @@ cask "waves" do
   # openers at this exact two-space indent and the "arm:   " / "intel: "
   # spacing, its seds are anchored to them.
   on_sequoia :or_newer do
-    sha256 arm:   "3bed9f8e3858dbac223767d8d78561d2783d0c35a40caab5651f5bb784945f5d",
-           intel: "e9e15bf6a4170efd93e5f0c29017694215687c960914bb7ded4daae274cc1a59"
+    sha256 arm:   "7b91e215074c13cbc4239aa7b8e40ff423aa4efe03a70c0e47711d8ec13830a9",
+           intel: "2bdcaa148ac58cf01c452d9fe2459eac172aaf3156f964925f68b73aa286d7d5"
 
     url "https://github.com/iamprivacy/Waves/releases/download/v#{version}/waves_macos-#{arch}.zip"
   end
   on_sonoma :or_older do
     # Placeholder until the first dual release publishes the legacy assets.
-    sha256 arm:   "f9d56ca2991dd4087d52bc698d56b2c24fb01fbba8589034992acf591dd3c22e",
-           intel: "274f4b7ebecc2cd60f5fd3c42e30df30815b867c82a57c377ce02c876494519e"
+    sha256 arm:   "a39b8d674da344e1208c1b055ade2c5e72404fba31a6dec0f967da3484d16c7d",
+           intel: "a547ed3bd28366edde5d3b9e6fd2dea0508db3030407b461a4d3a66ee0612d25"
 
     url "https://github.com/iamprivacy/Waves/releases/download/v#{version}/waves_macos-#{arch}_legacy.zip"
   end
