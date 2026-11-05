@@ -46,7 +46,7 @@ cask "waves" do
   end
 
   uninstall_postflight_steps do
-    FileUtils.rm_f(File.expand_path("~/Library/Application Support/Waves/install_channel"))
+    remove "Library/Application Support/Waves/install_channel", base: :home
   end
 
   zap trash: [
