@@ -34,7 +34,7 @@ cask "waves" do
 
   app "waves.app"
 
-  postflight do
+  postflight_steps do
     # The builds are not yet notarized; clear quarantine so the first launch
     # is not blocked by Gatekeeper (see the tap README).
     system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/waves.app"]
@@ -45,8 +45,8 @@ cask "waves" do
     File.write(File.join(config_dir, "install_channel"), "homebrew-cask\n")
   end
 
-  uninstall_postflight do
-    FileUtils.rm_f(File.expand_path("~/Library/Application Support/Waves/install_channel"))
+  uninstall_postflight_steps do
+    remove "Library/Application Support/Waves/install_channel", base: :home
   end
 
   zap trash: [
