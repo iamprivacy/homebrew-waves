@@ -34,19 +34,20 @@ cask "waves" do
 
   app "waves.app"
 
-  postflight do
+  postflight_steps do
     # The builds are not yet notarized; clear quarantine so the first launch
     # is not blocked by Gatekeeper (see the tap README).
-    system_command "/usr/bin/xattr", args: ["-cr", "#{appdir}/waves.app"]
+    run "/usr/bin/xattr", args: ["-cr", "{{appdir}}/waves.app"], must_succeed: false
     # Tell the app this copy is Homebrew-managed: its in-app updater then
-    # defers to `brew upgrade` instead of writing over the install.
-    config_dir = File.expand_path("~/Library/Application Support/Waves")
-    FileUtils.mkdir_p(config_dir)
-    File.write(File.join(config_dir, "install_channel"), "homebrew-cask\n")
+    # defers to `brew upgrade` instead of writing over the install. The
+    # folder is created first because the steps sandbox only lets a written
+    # file's own folder be written.
+    mkdir_p "Library/Application Support/Waves", base: :home
+    write_file "Library/Application Support/Waves/install_channel", "homebrew-cask\n", base: :home
   end
 
-  uninstall_postflight do
-    FileUtils.rm_f(File.expand_path("~/Library/Application Support/Waves/install_channel"))
+  uninstall_postflight_steps do
+    remove "Library/Application Support/Waves/install_channel", base: :home, content_contains: "homebrew-cask"
   end
 
   zap trash: [
